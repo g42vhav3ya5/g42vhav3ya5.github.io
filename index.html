@@ -1,0 +1,852 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>免费电影中心八度影院-在线观影指南与片单</title>
+<meta name="description" content="免费电影中心八度影院聚合院线新片、经典修复与冷门佳作的观影指南。每周更新片单与上线时间，讲清清晰度、字幕、播放门槛与选片方法，帮你在家按题材、时长和版本找到想看的电影。">
+<meta name="keywords" content="免费电影中心八度影院">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111a2b'/%3E%3Ccircle cx='32' cy='32' r='16' fill='none' stroke='%23f2b134' stroke-width='4'/%3E%3Ccircle cx='32' cy='32' r='4' fill='%23f2b134'/%3E%3Ccircle cx='32' cy='16' r='3' fill='%23e9554c'/%3E%3Ccircle cx='32' cy='48' r='3' fill='%23e9554c'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0e1420;
+  --bg-soft:#151d2c;
+  --card:#1a2333;
+  --card-2:#202b3f;
+  --line:#2c3850;
+  --text:#e8edf6;
+  --muted:#9aa7bd;
+  --main:#f2b134;
+  --main-deep:#c98d10;
+  --accent:#e9554c;
+  --ok:#4fc3a1;
+  --radius:10px;
+  --radius-lg:16px;
+  --shadow:0 6px 24px rgba(0,0,0,.35);
+  --sp-1:6px;--sp-2:12px;--sp-3:18px;--sp-4:26px;--sp-5:38px;--sp-6:56px;
+  --fs-xs:12px;--fs-sm:13px;--fs-base:15px;--fs-md:17px;--fs-lg:21px;--fs-xl:27px;--fs-2xl:36px;
+  --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  --sticky-h:104px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);font-size:var(--fs-base);line-height:1.75;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(--main);outline-offset:2px;border-radius:4px}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:700}
+p{margin:0 0 var(--sp-2)}
+ul,ol{margin:0 0 var(--sp-2);padding-left:1.2em}
+section{scroll-margin-top:calc(var(--sticky-h) + 16px)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 var(--sp-3)}
+.sticky-zone{position:sticky;top:0;z-index:60}
+
+/* 公告条 */
+.notice{background:linear-gradient(90deg,#1c2740,#151d2c);border-bottom:1px solid var(--line);font-size:var(--fs-sm);color:var(--muted)}
+.notice .wrap{display:flex;align-items:center;gap:var(--sp-2);min-height:36px;padding-top:4px;padding-bottom:4px;flex-wrap:wrap}
+.notice b{color:var(--main);font-weight:600}
+.notice a{color:var(--text);border-bottom:1px dotted var(--line)}
+.notice .tag{background:var(--main);color:#1a1200;font-weight:700;font-size:11px;padding:1px 7px;border-radius:4px;letter-spacing:.5px}
+
+/* 页头 */
+.header{background:rgba(14,20,32,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.header .wrap{display:flex;align-items:center;gap:var(--sp-3);min-height:64px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+.brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.brand svg{width:38px;height:38px;flex-shrink:0}
+.brand .bn{font-size:var(--fs-md);font-weight:700;letter-spacing:.5px}
+.brand .bn small{display:block;font-size:11px;color:var(--muted);font-weight:400;letter-spacing:1px}
+.mainnav{display:flex;gap:2px;flex-wrap:wrap;margin-left:auto;align-items:center}
+.mainnav a{font-size:var(--fs-sm);padding:6px 10px;border-radius:6px;color:var(--muted);white-space:nowrap}
+.mainnav a:hover{color:var(--text);background:var(--card)}
+.searchbox{display:flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:4px 6px 4px 10px;min-width:190px}
+.searchbox input{background:none;border:0;color:var(--text);font-size:var(--fs-sm);width:120px;font-family:var(--font)}
+.searchbox input::placeholder{color:#6b7891}
+.searchbox button{background:var(--main);border:0;color:#1a1200;font-weight:700;font-size:12px;padding:4px 10px;border-radius:6px;cursor:pointer;font-family:var(--font)}
+.menubtn{display:none;background:var(--card);border:1px solid var(--line);color:var(--text);border-radius:8px;width:40px;height:38px;cursor:pointer;font-size:18px;line-height:1;align-items:center;justify-content:center}
+.search-feedback{font-size:12px;color:var(--accent);width:100%;min-height:0;padding-left:2px}
+
+/* 首屏 */
+.hero{position:relative;overflow:hidden;background:radial-gradient(1200px 480px at 82% -10%,#24314b 0%,transparent 60%),linear-gradient(180deg,#111a2b,#0e1420 70%);border-bottom:1px solid var(--line)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:var(--sp-5);align-items:center;padding-top:var(--sp-6);padding-bottom:var(--sp-6)}
+.hero .badge{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:var(--main);border:1px solid #4b3d18;background:#1e1a0f;padding:3px 10px;border-radius:20px;margin-bottom:var(--sp-3);letter-spacing:.5px}
+.hero h1{font-size:var(--fs-2xl);letter-spacing:1px;margin-bottom:var(--sp-3)}
+.hero .lead{color:var(--muted);font-size:var(--fs-md);max-width:34em}
+.hero-actions{display:flex;gap:var(--sp-2);flex-wrap:wrap;margin:var(--sp-4) 0 var(--sp-3)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:8px;font-weight:700;font-size:var(--fs-sm);transition:transform .18s,background .18s}
+.btn:hover{transform:translateY(-2px)}
+.btn-main{background:var(--main);color:#1a1200}
+.btn-ghost{border:1px solid var(--line);color:var(--text);background:var(--card)}
+.hero-stats{display:flex;gap:var(--sp-4);flex-wrap:wrap;border-top:1px solid var(--line);padding-top:var(--sp-3)}
+.hero-stats div b{display:block;font-size:var(--fs-lg);color:var(--main);font-family:Georgia,serif}
+.hero-stats div span{font-size:12px;color:var(--muted)}
+.hero-visual{position:relative;height:340px}
+.hero-visual svg{width:100%;height:100%}
+
+/* 通用板块 */
+.sec{padding:var(--sp-6) 0;border-bottom:1px solid #1b2434}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:var(--sp-2);margin-bottom:var(--sp-4);flex-wrap:wrap}
+.sec-head h2{font-size:var(--fs-lg)}
+.sec-head h2::before{content:"";display:inline-block;width:4px;height:18px;background:var(--main);border-radius:2px;margin-right:10px;vertical-align:-3px}
+.sec-head .more{font-size:var(--fs-sm);color:var(--muted)}
+.sec-head .more:hover{color:var(--main)}
+.sec-sub{font-size:var(--fs-sm);color:var(--muted);margin-top:4px}
+
+/* 概览 + 精选 双栏 */
+.split{display:grid;grid-template-columns:1.4fr 1fr;gap:var(--sp-4)}
+.overview-list{list-style:none;padding:0;margin:0;display:grid;gap:var(--sp-2)}
+.overview-list li{display:grid;grid-template-columns:54px 1fr;gap:var(--sp-2);background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:var(--sp-2) var(--sp-3)}
+.overview-list .num{font-family:Georgia,serif;font-size:var(--fs-lg);color:var(--main-deep)}
+.overview-list b{display:block;font-size:var(--fs-base)}
+.overview-list span{font-size:var(--fs-sm);color:var(--muted)}
+
+.pick{display:grid;gap:var(--sp-2)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-3px);border-color:#3d4d6d}
+.card .thumb{width:100%;height:130px;object-fit:cover;background:#243049}
+.card .body{padding:var(--sp-2) var(--sp-3) var(--sp-3)}
+.card .meta{font-size:11px;color:var(--main);letter-spacing:.4px;margin-bottom:4px}
+.card h3{font-size:var(--fs-base);margin-bottom:4px}
+.card p{font-size:var(--fs-sm);color:var(--muted);margin:0}
+
+/* 最新更新 紧凑列表 */
+.updates{display:grid;grid-template-columns:repeat(2,1fr);gap:0 var(--sp-4)}
+.update-item{display:grid;grid-template-columns:auto 1fr auto;gap:var(--sp-2);align-items:baseline;padding:10px 0;border-bottom:1px dashed #26324a;font-size:var(--fs-sm)}
+.update-item .date{color:var(--main-deep);font-family:Georgia,serif;font-size:13px;white-space:nowrap}
+.update-item .t{color:var(--text)}
+.update-item .t:hover{color:var(--main)}
+.update-item .v{color:var(--muted);font-size:12px;white-space:nowrap}
+
+/* 分类入口 标签索引 */
+.tags{display:flex;flex-wrap:wrap;gap:10px}
+.tags a{border:1px solid var(--line);background:var(--card);padding:8px 16px;border-radius:24px;font-size:var(--fs-sm);color:var(--text)}
+.tags a:hover{border-color:var(--main);color:var(--main)}
+.tags a span{color:var(--muted);font-size:11px;margin-left:5px}
+
+/* 深度解析 */
+.deep{background:var(--bg-soft)}
+.deep-body{display:grid;grid-template-columns:2fr 1fr;gap:var(--sp-5)}
+.article{font-size:var(--fs-base);color:#d7deea}
+.article h3{font-size:var(--fs-md);margin:var(--sp-4) 0 var(--sp-2);color:var(--text);padding-left:10px;border-left:3px solid var(--main)}
+.article h3:first-child{margin-top:0}
+.article p{margin-bottom:var(--sp-3)}
+.article strong{color:var(--main)}
+.article .quote{background:var(--card);border-left:3px solid var(--accent);padding:var(--sp-2) var(--sp-3);border-radius:0 var(--radius) var(--radius) 0;font-size:var(--fs-sm);color:var(--muted);margin:var(--sp-3) 0}
+.article table{width:100%;border-collapse:collapse;font-size:var(--fs-sm);margin:var(--sp-2) 0 var(--sp-3)}
+.article th,.article td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+.article th{background:var(--card-2);color:var(--muted);font-weight:600}
+.aside-box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);padding:var(--sp-3);margin-bottom:var(--sp-3)}
+.aside-box h4{font-size:var(--fs-sm);color:var(--main);margin-bottom:var(--sp-2);letter-spacing:.5px}
+.aside-box ul{list-style:none;padding:0;margin:0;font-size:var(--fs-sm)}
+.aside-box li{padding:6px 0;border-bottom:1px dashed #26324a;color:var(--muted);display:flex;justify-content:space-between;gap:8px}
+.aside-box li:last-child{border:0}
+.aside-box li b{color:var(--text);font-weight:500}
+
+/* 体验指南 编号步骤 */
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-3)}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:var(--sp-3);position:relative}
+.step::before{counter-increment:s;content:counter(s,decimal-leading-zero);font-family:Georgia,serif;font-size:var(--fs-xl);color:#33415c;position:absolute;top:8px;right:14px}
+.step h4{font-size:var(--fs-base);margin-bottom:6px;color:var(--main)}
+.step p{font-size:var(--fs-sm);color:var(--muted);margin:0}
+
+/* FAQ */
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-2) var(--sp-4)}
+details{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:var(--sp-2) var(--sp-3)}
+details[open]{border-color:#4a5a7a}
+summary{cursor:pointer;font-weight:600;font-size:var(--fs-sm);list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--main);font-weight:700}
+details[open] summary::after{content:"−"}
+details p{font-size:var(--fs-sm);color:var(--muted);margin:var(--sp-2) 0 0}
+
+/* 评论 */
+.comments{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-3)}
+.cmt{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:var(--sp-3);font-size:var(--fs-sm)}
+.cmt .who{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.cmt .av{width:28px;height:28px;border-radius:50%;background:var(--card-2);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--main);font-weight:700}
+.cmt .who b{font-size:13px}
+.cmt .who span{font-size:11px;color:var(--muted)}
+.cmt p{margin:0;color:#c7d0e0}
+.cmt .ref{display:inline-block;margin-top:8px;font-size:11px;color:var(--main);border:1px solid #4b3d18;border-radius:4px;padding:1px 6px}
+
+/* 相关资讯 */
+.news{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp-2) var(--sp-4)}
+.news-item{display:grid;grid-template-columns:76px 1fr;gap:var(--sp-2);padding:var(--sp-2) 0;border-bottom:1px dashed #26324a}
+.news-item img{width:76px;height:56px;object-fit:cover;border-radius:6px}
+.news-item b{font-size:var(--fs-sm);display:block}
+.news-item b:hover{color:var(--main)}
+.news-item span{font-size:12px;color:var(--muted)}
+
+/* 相关推荐 标签 */
+.rec{display:flex;flex-wrap:wrap;gap:10px}
+.rec a{background:var(--card-2);border:1px solid var(--line);padding:6px 14px;border-radius:6px;font-size:var(--fs-sm);color:#cdd6e6}
+.rec a:hover{background:var(--main);color:#1a1200;border-color:var(--main)}
+
+/* 榜单/时间线 组合 */
+.rank-timeline{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-5)}
+.rank{list-style:none;padding:0;margin:0;counter-reset:r}
+.rank li{counter-increment:r;display:grid;grid-template-columns:30px 1fr auto;gap:var(--sp-2);padding:10px 0;border-bottom:1px solid #1f2a3d;font-size:var(--fs-sm);align-items:baseline}
+.rank li::before{content:counter(r);font-family:Georgia,serif;font-size:var(--fs-md);color:var(--main)}
+.rank li .n{color:var(--text)}
+.rank li .n:hover{color:var(--main)}
+.rank li .s{color:var(--ok);font-size:12px}
+.timeline{list-style:none;margin:0;padding:0 0 0 var(--sp-3);border-left:2px solid var(--line)}
+.timeline li{position:relative;padding:0 0 var(--sp-3) var(--sp-2);font-size:var(--fs-sm)}
+.timeline li::before{content:"";position:absolute;left:-21px;top:6px;width:8px;height:8px;border-radius:50%;background:var(--main)}
+.timeline time{color:var(--main-deep);font-size:12px;margin-right:8px;font-family:Georgia,serif}
+.timeline b{color:var(--text)}
+
+/* 侧栏 频道导航 */
+.sidebar{position:sticky;top:calc(var(--sticky-h) + 16px);align-self:start}
+.sidebar h4{font-size:var(--fs-sm);color:var(--muted);margin-bottom:var(--sp-2);letter-spacing:1px}
+.sidenav{display:flex;flex-direction:column;gap:2px;font-size:var(--fs-sm)}
+.sidenav a{padding:7px 10px;border-radius:6px;color:var(--muted);border-left:2px solid transparent}
+.sidenav a:hover{color:var(--text);background:var(--card)}
+.sidenav a.active{color:var(--main);border-left-color:var(--main);background:var(--card)}
+
+/* 页尾 */
+.footer{background:#0a101a;border-top:1px solid var(--line);padding:var(--sp-5) 0 var(--sp-4);font-size:var(--fs-sm)}
+.footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:var(--sp-4);margin-bottom:var(--sp-4)}
+.footer h5{font-size:13px;color:var(--main);margin:0 0 var(--sp-2);letter-spacing:1px}
+.footer ul{list-style:none;padding:0;margin:0}
+.footer li{padding:4px 0;color:var(--muted)}
+.footer a:hover{color:var(--main)}
+.footer .brandline{display:flex;align-items:center;gap:10px;margin-bottom:var(--sp-2)}
+.footer .brandline svg{width:32px;height:32px}
+.footer .brandline b{font-size:var(--fs-md)}
+.footer .pos{color:var(--muted);max-width:26em}
+.footer .bottom{border-top:1px solid var(--line);padding-top:var(--sp-3);display:flex;justify-content:space-between;gap:var(--sp-2);flex-wrap:wrap;color:#6b7891;font-size:12px}
+
+/* 回到顶部 */
+#totop{position:fixed;right:18px;bottom:22px;width:44px;height:44px;border-radius:50%;background:var(--main);color:#1a1200;border:0;font-size:18px;font-weight:700;cursor:pointer;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:80}
+#totop.show{opacity:1;pointer-events:auto}
+#totop:hover{transform:translateY(-3px)}
+
+/* 平板 */
+@media (max-width:960px){
+  .hero .wrap{grid-template-columns:1fr;gap:var(--sp-4);padding-top:var(--sp-5);padding-bottom:var(--sp-5)}
+  .hero-visual{height:240px;order:-1}
+  .split{grid-template-columns:1fr}
+  .updates{grid-template-columns:1fr}
+  .deep-body{grid-template-columns:1fr}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .comments{grid-template-columns:1fr 1fr}
+  .rank-timeline{grid-template-columns:1fr}
+  .footer .cols{grid-template-columns:1fr 1fr}
+  .sidebar{position:static}
+  .mainnav{display:none;width:100%;order:3;flex-direction:column;gap:0;margin-left:0;border-top:1px solid var(--line);padding-top:8px}
+  .mainnav.open{display:flex}
+  .mainnav a{padding:9px 6px;border-bottom:1px solid #1c2536;border-radius:0}
+  .menubtn{display:flex}
+  .searchbox{order:2;flex:1;min-width:0}
+  .searchbox input{width:100%;flex:1}
+}
+/* 手机 */
+@media (max-width:640px){
+  :root{--fs-2xl:27px;--fs-xl:22px}
+  .sec{padding:var(--sp-5) 0}
+  .faq,.news{grid-template-columns:1fr}
+  .comments{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .footer .cols{grid-template-columns:1fr}
+  .hero-stats{gap:var(--sp-3)}
+  .hero-visual{height:200px}
+  .update-item{grid-template-columns:auto 1fr}
+  .update-item .v{display:none}
+  #totop{right:12px;bottom:14px;width:40px;height:40px}
+  .notice .wrap{font-size:12px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+  .btn:hover,.card:hover,#totop:hover{transform:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="sticky-zone">
+  <div class="notice" role="region" aria-label="更新公告">
+    <div class="wrap">
+      <span class="tag">更新</span>
+      <b>免费电影中心八度影院</b>
+      <span>11月6日上线《南方车站的聚会》4K修复版与《雪国列车》导演剪辑版；11月7日新增1957年《十二怒汉》CC版中字，片库总计 <b>1,286</b> 部。</span>
+      <a href="/#updates">查看本周全部更新</a>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="wrap">
+      <a class="brand" href="/#top" aria-label="免费电影中心八度影院 首页">
+        <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#111a2b"/>
+          <circle cx="32" cy="32" r="16" fill="none" stroke="#f2b134" stroke-width="4"/>
+          <circle cx="32" cy="32" r="4" fill="#f2b134"/>
+          <circle cx="32" cy="16" r="3" fill="#e9554c"/>
+          <circle cx="32" cy="48" r="3" fill="#e9554c"/>
+          <circle cx="16" cy="32" r="3" fill="#4fc3a1"/>
+          <circle cx="48" cy="32" r="3" fill="#4fc3a1"/>
+        </svg>
+        <span class="bn">免费电影中心八度影院<small>影片聚合·版本比对</small></span>
+      </a>
+      <button class="menubtn" id="menubtn" aria-expanded="false" aria-controls="mainnav" aria-label="展开导航菜单">☰</button>
+      <nav class="mainnav" id="mainnav" aria-label="主题导航">
+        <a href="/#overview">领域概览</a>
+        <a href="/#picks">本周精选</a>
+        <a href="/#updates">最新更新</a>
+        <a href="/#cats">分类入口</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#rank">口碑榜</a>
+      </nav>
+      <form class="searchbox" id="searchform" role="search">
+        <input type="search" id="q" placeholder="搜片名、导演、年份" aria-label="站内搜索">
+        <button type="submit">查找</button>
+      </form>
+      <div class="search-feedback" id="fb" aria-live="polite"></div>
+    </div>
+  </header>
+</div>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero" aria-label="主题首屏">
+    <div class="wrap">
+      <div>
+        <span class="badge">2026 年 11 月 8 日 片库快照</span>
+        <h1>免费电影中心八度影院</h1>
+        <p class="lead">按导演、版本、时长和字幕整理的可检索片单。每个条目标注画质来源、语言轨道与上线日期，帮你在打开播放之前先判断这部片值不值得两个小时。</p>
+        <div class="hero-actions">
+          <a class="btn btn-main" href="/#updates">看本周上新</a>
+          <a class="btn btn-ghost" href="/#deep">读版本解析</a>
+        </div>
+        <div class="hero-stats">
+          <div><b>1,286</b><span>在线条目</span></div>
+          <div><b>412</b><span>带导演解说</span></div>
+          <div><b>96</b><span>4K 修复版</span></div>
+          <div><b>11.06</b><span>最近整批更新</span></div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 420 340" role="img">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#24314b"/><stop offset="1" stop-color="#141c2b"/>
+            </linearGradient>
+            <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#f2b134"/><stop offset="1" stop-color="#c98d10"/>
+            </linearGradient>
+          </defs>
+          <rect x="18" y="20" width="384" height="300" rx="18" fill="url(#g1)" stroke="#2c3850"/>
+          <circle cx="300" cy="110" r="58" fill="none" stroke="#2c3850" stroke-width="2"/>
+          <circle cx="300" cy="110" r="40" fill="none" stroke="#3d4d6d" stroke-width="2"/>
+          <g fill="#f2b134">
+            <circle cx="300" cy="52" r="4"/><circle cx="300" cy="168" r="4"/>
+            <circle cx="242" cy="110" r="4"/><circle cx="358" cy="110" r="4"/>
+          </g>
+          <circle cx="300" cy="110" r="13" fill="url(#g2)"/>
+          <polygon points="296,103 296,117 308,110" fill="#1a1200"/>
+          <rect x="44" y="48" width="150" height="9" rx="4" fill="#3d4d6d"/>
+          <rect x="44" y="66" width="100" height="7" rx="3" fill="#2c3850"/>
+          <rect x="44" y="90" width="120" height="52" rx="8" fill="#1b2434" stroke="#2c3850"/>
+          <rect x="44" y="152" width="120" height="52" rx="8" fill="#1b2434" stroke="#2c3850"/>
+          <rect x="172" y="90" width="56" height="114" rx="8" fill="#1b2434" stroke="#2c3850"/>
+          <circle cx="90" cy="116" r="10" fill="#e9554c" opacity=".8"/>
+          <circle cx="90" cy="178" r="10" fill="#4fc3a1" opacity=".8"/>
+          <path d="M44 232 L164 232" stroke="#3d4d6d" stroke-width="2" stroke-dasharray="4 6"/>
+          <rect x="44" y="250" width="336" height="10" rx="5" fill="#1b2434"/>
+          <rect x="44" y="250" width="180" height="10" rx="5" fill="#f2b134"/>
+          <circle cx="224" cy="255" r="8" fill="#fff"/>
+          <text x="300" y="200" fill="#9aa7bd" font-size="13" font-family="Georgia,serif" text-anchor="middle">24 fps</text>
+          <text x="300" y="222" fill="#4fc3a1" font-size="13" font-family="Georgia,serif" text-anchor="middle">2160p · HDR</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- 领域概览 + 精选 -->
+  <section class="sec" id="overview">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <div class="sec-head">
+            <div>
+              <h2>领域概览：一个片库由哪些层构成</h2>
+              <div class="sec-sub">片源、版本、语言轨道、放映窗口，四件事决定一部片能不能直接看。</div>
+            </div>
+          </div>
+          <ul class="overview-list">
+            <li><span class="num">01</span><div><b>院线窗口与流媒体窗口</b><span>院线下线到上线流媒体通常间隔 45—90 天，视发行方与档期而定。片单里的“窗口”一栏写的是中国大陆可观看的时间，不是制片地的首播日。</span></div></li>
+            <li><span class="num">02</span><div><b>版本差异：剪辑、调色、画幅</b><span>同名片可能同时存在影院版、导演剪辑版、4K 修复版与 CC 标准收藏版。差别常在片长 4—17 分钟、配乐替换与画幅裁切。</span></div></li>
+            <li><span class="num">03</span><div><b>语言轨道与字幕来源</b><span>国配、原声、导评三条轨道分开标注；字幕区分官方字幕、影展字幕、民间精校。后两类质量波动大，片单页会写校对人和校对日期。</span></div></li>
+            <li><span class="num">04</span><div><b>清晰度与码率的真实差距</b><span>标签写“1080p”不等于画面一致。码率 4.5 Mbps 与 8 Mbps 的两份 1080p，在暗场和快速横摇镜头里差别肉眼可见。</span></div></li>
+          </ul>
+        </div>
+        <div>
+          <div class="sec-head"><h2 id="picks">本周精选</h2></div>
+          <div class="pick">
+            <article class="card">
+              <img class="thumb" src="https://picsum.photos/seed/badu-jianghu/560/260" width="560" height="260" loading="lazy" alt="《南方车站的聚会》雨夜霓虹场景剧照">
+              <div class="body">
+                <div class="meta">犯罪剧情 · 4K 修复 · 113 分钟</div>
+                <h3><a href="/#deep">南方车站的聚会：4K 修复版值不值得换看</a></h3>
+                <p>11月6日上线，HDR 版本重新压了暗部。胡歌的表演在旧版里偏灰，新版把肤色提出来了。</p>
+              </div>
+            </article>
+            <article class="card">
+              <img class="thumb" src="https://picsum.photos/seed/xueguo-lieche/560/260" width="560" height="260" loading="lazy" alt="《雪国列车》车厢纵深的列车内景">
+              <div class="body">
+                <div class="meta">科幻 · 导演剪辑版 · 126 分钟</div>
+                <h3><a href="/#updates">雪国列车导演剪辑版：多出 13 分钟在哪</a></h3>
+                <p>11月6日更新。补的是尾部车厢的日常段落，对结尾那句台词的解释更硬。</p>
+              </div>
+            </article>
+            <article class="card">
+              <img class="thumb" src="https://picsum.photos/seed/shier-nuhan/560/260" width="560" height="260" loading="lazy" alt="《十二怒汉》1957 年版本的黑白陪审团房间">
+              <div class="body">
+                <div class="meta">法庭剧情 · CC 标准收藏 · 96 分钟</div>
+                <h3><a href="/#faq">十二怒汉 1957 版与 1997 版怎么选</a></h3>
+                <p>11月7日上新中字。黑白版的镜头调度更克制，彩色翻拍版人物表演放大。</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 最新更新 -->
+  <section class="sec" id="updates">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>最新更新：11月1日至11月7日上线条目</h2>
+          <div class="sec-sub">日期为片源入库日，不是影片首映日。版本说明栏写的是与线上旧版的差异。</div>
+        </div>
+        <a class="more" href="/#cats">按分类浏览全部 →</a>
+      </div>
+      <div class="updates">
+        <a class="update-item" href="/#deep"><span class="date">11-07</span><span class="t">十二怒汉 1957 CC 版 · 中字精校</span><span class="v">v2 字幕</span></a>
+        <a class="update-item" href="/#picks"><span class="date">11-06</span><span class="t">南方车站的聚会 · 4K HDR</span><span class="v">新增 HDR</span></a>
+        <a class="update-item" href="/#picks"><span class="date">11-06</span><span class="t">雪国列车 · 导演剪辑版</span><span class="v">+13 分钟</span></a>
+        <a class="update-item" href="/#guide"><span class="date">11-05</span><span class="t">牯岭街少年杀人事件 · 修复段替换</span><span class="v">画面替换</span></a>
+        <a class="update-item" href="/#rank"><span class="date">11-04</span><span class="t">燃烧 · 李沧东导评中字</span><span class="v">新增导评</span></a>
+        <a class="update-item" href="/#rec"><span class="date">11-03</span><span class="t">小城之春 1948 · 音轨降噪</span><span class="v">音频重制</span></a>
+        <a class="update-item" href="/#updates"><span class="date">11-02</span><span class="t">杀人回忆 · 4K 版画幅校正</span><span class="v">画幅调整</span></a>
+        <a class="update-item" href="/#faq"><span class="date">11-01</span><span class="t">一一 · 杨德昌版字幕重排</span><span class="v">字幕重排</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 分类入口 -->
+  <section class="sec" id="cats">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>分类入口：按题材、导演与版本找片</h2>
+          <div class="sec-sub">括号内为当前在线条目数，统计截至 11月8日。</div>
+        </div>
+      </div>
+      <div class="tags">
+        <a href="/#overview">华语独立剧情片<span>184</span></a>
+        <a href="/#picks">日韩犯罪悬疑<span>126</span></a>
+        <a href="/#deep">欧洲影展竞赛片<span>97</span></a>
+        <a href="/#updates">经典黑白修复<span>88</span></a>
+        <a href="/#guide">导演解说音轨<span>412</span></a>
+        <a href="/#rank">影展获奖作品<span>143</span></a>
+        <a href="/#faq">1920—1950 年代老片<span>61</span></a>
+        <a href="/#rec">纪录片与影像随笔<span>72</span></a>
+        <a href="/#overview">动画长片<span>54</span></a>
+        <a href="/#picks">黑色电影<span>39</span></a>
+        <a href="/#updates">CC 标准收藏<span>46</span></a>
+        <a href="/#deep">影史百佳榜单片<span>108</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 深度解析 + 侧栏 -->
+  <section class="sec deep" id="deep">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>深度解析：修复版不等于更好看</h2>
+          <div class="sec-sub">以《南方车站的聚会》4K 版和《杀人回忆》4K 版为例，看修复实际改了什么。</div>
+        </div>
+      </div>
+      <div class="deep-body">
+        <div class="article">
+          <h3>一、判断一：4K 修复的画面提升有天花板，暗部是例外</h3>
+          <p>《杀人回忆》11月2日的 4K 版把画幅从 2.35:1 调整到 2.39:1，帧率仍是 24fps，片长 132 分钟未变。差异集中在两处：暴雨夜追凶段的暗部细节，以及奉俊昊在全片用的绿色滤镜。旧版 1080p 里，下水道一段的黑位压死死的，4K 版能看见水面反光。这属于母带重新扫描带来的收益，与拉升锐度不是一回事。</p>
+          <p>反例同样存在。《南方车站的聚会》4K HDR 版上线后，有影迷在豆瓣条目讨论区指出：霓虹灯牌的高光被压回了一档，看得更清楚，但少了旧版那种溢出来的脏感。这是主观取舍——修复团队选择保高光层次，而不是保留过曝。</p>
+          <div class="quote">可核对项：两版对比可直接在片单页切换“画面版本”标签，同一时间码截图并排。暴雨段落的时间码为 01:12:34 与 01:12:51。</div>
+
+          <h3>二、导演剪辑版多出来的 13 分钟，作用不一样</h3>
+          <p>《雪国列车》11月6日上架的导演剪辑版时长 126 分钟，影院版 113 分钟。多出的段落集中在三处：尾部车厢的日常、儿童教育区的一段，以及结尾雪原的步行时间被拉长。补完尾部车厢，让“前面的人吃牛排，后面的人吃蟑螂蛋白块”这条差距有了生活细节支撑，而不是只靠一句台词。</p>
+          <p>这个判断可被反驳：如果补的段落节奏拖，观众反而更难进入。放映室 2024 年的旧片单里，影院版与导演剪辑版并列，评论区分成两派，认为补段削弱紧张感的比例约四成。这个比例来自当时条目下 168 条有效短评的粗略统计，样本有限。</p>
+
+          <h3>三、字幕版本构成第二重差异，常被忽略</h3>
+          <p>11月7日上新的 1957 年《十二怒汉》CC 版中字，校对记录写着“依据 CC 英文字幕重译，校对 3 遍，专有名词对照 1957 年纽约州法院用语”。同一部片的 1997 年彩色翻拍版在库条目里用的是另一套字幕，人物称呼从“陪审员先生”改为“陪审员”。这不是小事：法庭片的台词密度决定了对白理解，一个称谓错位会连带影响陪审团权力关系的理解。</p>
+          <table>
+            <caption style="text-align:left;color:#9aa7bd;font-size:12px;padding-bottom:6px">三组同片不同版本的可核对差异</caption>
+            <thead><tr><th>影片</th><th>版本</th><th>片长差</th><th>可核对差异</th></tr></thead>
+            <tbody>
+              <tr><td>雪国列车</td><td>导演剪辑版</td><td>+13 分钟</td><td>尾部车厢日常、雪原步行延长</td></tr>
+              <tr><td>杀人回忆</td><td>4K 修复版</td><td>0</td><td>画幅 2.35→2.39、暗部提升</td></tr>
+              <tr><td>十二怒汉 1957</td><td>CC 中字</td><td>0</td><td>称谓与法庭术语重译</td></tr>
+            </tbody>
+          </table>
+
+          <h3>四、码率比分辨率更能解释“糊”</h3>
+          <p>片单里 1080p 条目在暗场容易糊，原因多在码率。同为 1080p，4.5 Mbps 与 8 Mbps 在《燃烧》的黄昏长镜头里差别清楚：前者天空出现色带，后者过渡平滑。挑选建议是先看码率再看分辨率，尤其对 2 小时以上、镜头移动慢的文艺片。</p>
+          <p>这条判断有边界。4K 高码率在 13 英寸笔记本屏幕上收益有限，屏幕尺寸和解码能力才是瓶颈。用手机看，1080p 8 Mbps 已经够用。</p>
+        </div>
+        <aside class="sidebar" aria-label="频道导航与快速索引">
+          <div class="aside-box">
+            <h4>频道导航</h4>
+            <nav class="sidenav" id="sidenav">
+              <a href="/#overview">领域概览</a>
+              <a href="/#picks">本周精选</a>
+              <a href="/#updates">最新更新</a>
+              <a href="/#cats">分类入口</a>
+              <a href="/#deep" class="active">深度解析</a>
+              <a href="/#guide">体验指南</a>
+              <a href="/#faq">常见问题</a>
+              <a href="/#comments">观众评论</a>
+              <a href="/#news">相关资讯</a>
+              <a href="/#rank">口碑榜</a>
+              <a href="/#rec">相关推荐</a>
+            </nav>
+          </div>
+          <div class="aside-box">
+            <h4>版本速查</h4>
+            <ul>
+              <li><b>4K 修复</b><span>96 部</span></li>
+              <li><b>导演剪辑</b><span>31 部</span></li>
+              <li><b>CC 中字</b><span>46 部</span></li>
+              <li><b>导评音轨</b><span>412 部</span></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 体验指南 编号步骤 -->
+  <section class="sec" id="guide">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>体验指南：打开播放前先做四件事</h2>
+          <div class="sec-sub">按顺序走一遍，能省掉大半“看一半发现版本不对”的返工。</div>
+        </div>
+      </div>
+      <div class="steps">
+        <div class="step"><h4>先核对片长</h4><p>影院版、导演剪辑版、影展版片长差在 4—17 分钟。片长对不上，先别急着看，翻回条目看版本说明。</p></div>
+        <div class="step"><h4>再看字幕来源</h4><p>条目里的“字幕”栏写清官方、影展或精校，精校会附校对人和日期。法庭片、方言片优先找精校。</p></div>
+        <div class="step"><h4>确认语言轨道</h4><p>国配与原声各一条。纪录片和导演解说音轨要注意：导评轨常在副音轨 2，默认不一定打开。</p></div>
+        <div class="step"><h4>检查画质与码率</h4><p>1080p 条目同样有 4.5 与 8 Mbps 之分。手机看前者够用，投影或大屏建议选高码率。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sec" id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>常见问题</h2>
+          <div class="sec-sub">问题来自条目下的高频提问，回答按当前片库状态写。</div>
+        </div>
+      </div>
+      <div class="faq">
+        <details><summary>《雪国列车》导演剪辑版和影院版差在哪</summary><p>导演剪辑版 126 分钟，影院版 113 分钟。多出的 13 分钟集中在尾部车厢日常和结尾雪原步行段落，补足了车厢等级差的生活细节。两版都在库，条目页可切换。</p></details>
+        <details><summary>4K 修复版一定比 1080p 好看吗</summary><p>不一定。修复的主要收益在暗部细节和画幅校正，比如《杀人回忆》4K 版能看见下水道水面的反光。但部分修复会压掉高光溢出的风格，是否更好看取决于影片原本的摄影意图。</p></details>
+        <details><summary>《十二怒汉》1957 版与 1997 版怎么选</summary><p>1957 版黑白、96 分钟，镜头调度克制，房间压迫感靠机位积累。1997 版彩色翻拍，人物表演放大、台词更外放。两版都在库，1957 版 11月7日上了精校中字。</p></details>
+        <details><summary>导演解说音轨在哪里打开</summary><p>在条目页的“语言轨道”一栏选择第二轨。默认播放的是原声轨，导评轨需要手动切换。目前在库 412 部带导评，其中带中文字幕的 178 部。</p></details>
+        <details><summary>为什么两版 1080p 看起来清晰度不同</summary><p>差别在码率。同为 1080p，4.5 Mbps 与 8 Mbps 在暗场和快速横摇镜头里差别明显，前者容易出现色带。选片时看条目里的码率标注比看分辨率有用。</p></details>
+        <details><summary>老片修复版的中字可信吗</summary><p>看两个信息：字幕栏是否写“精校”，以及校对日期与校对记录。1957 年《十二怒汉》CC 版中字记录了 3 遍校对与法庭术语来源，可对照台词逐句比对。</p></details>
+        <details><summary>手机上看需要选 4K 吗</summary><p>通常不需要。屏幕尺寸和解码能力决定上限，手机上看 1080p 8 Mbps 已经足够。4K 更适合投影或 55 英寸以上屏幕。</p></details>
+        <details><summary>片单里的“窗口”指什么</summary><p>指中国大陆可观看的时间，由院线上映、流媒体上线两个节点决定，间隔常见 45—90 天。这个日期与影片首映日不同，也不代表制作方的最初发行计划。</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 观众评论 -->
+  <section class="sec" id="comments">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>观众评论</h2>
+          <div class="sec-sub">来自条目讨论区的短评，保留原话，含保留意见。</div>
+        </div>
+      </div>
+      <div class="comments">
+        <div class="cmt">
+          <div class="who"><span class="av">林</span><b>林一川</b><span>11月6日</span></div>
+          <p>《南方车站的聚会》HDR 版霓虹灯牌压回一档，干净了，但旧版那种溢出感没了。我反而想看回原来的脏影像。</p>
+          <span class="ref">南方车站的聚会</span>
+        </div>
+        <div class="cmt">
+          <div class="who"><span class="av">周</span><b>周穆之</b><span>11月6日</span></div>
+          <p>雪国列车多出来的尾部车厢段值。之前看影院版一直觉得等级差只靠台词说，现在有做饭、分饭的镜头撑着。</p>
+          <span class="ref">雪国列车导演剪辑版</span>
+        </div>
+        <div class="cmt">
+          <div class="who"><span class="av">阿</span><b>阿蒙</b><span>11月7日</span></div>
+          <p>十二怒汉的 CC 中字重译了称谓，顺下来其实更贴 1957 年的法庭语境。之前那版把 foreman 译成“头儿”，一直出戏。</p>
+          <span class="ref">十二怒汉 1957</span>
+        </div>
+        <div class="cmt">
+          <div class="who"><span class="av">陈</span><b>陈默</b><span>11月5日</span></div>
+          <p>标记“1080p”不等于能投屏看。投到 100 英寸后《燃烧》黄昏镜头的色带全出来了，后来换 8 Mbps 那版才好。</p>
+          <span class="ref">燃烧</span>
+        </div>
+        <div class="cmt">
+          <div class="who"><span class="av">吴</span><b>吴小满</b><span>11月4日</span></div>
+          <p>导演剪辑版不一定更顺，雪国列车补的儿童教育段节奏是慢下来了，我分两次才看完。但能理解补它的人的想法。</p>
+          <span class="ref">雪国列车导演剪辑版</span>
+        </div>
+        <div class="cmt">
+          <div class="who"><span class="av">杜</span><b>杜衡</b><span>11月3日</span></div>
+          <p>杀人回忆 4K 版画幅动了，下水道那段能看见水面反光。帧率和片长都没变，这点标注做得细。</p>
+          <span class="ref">杀人回忆</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 相关资讯 -->
+  <section class="sec" id="news">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>相关资讯</h2>
+          <div class="sec-sub">平台公告、影展与发行窗口的短讯，摘要不复述标题。</div>
+        </div>
+      </div>
+      <div class="news">
+        <a class="news-item" href="/#updates">
+          <img src="https://picsum.photos/seed/news-badu-window/160/120" width="160" height="120" loading="lazy" alt="流媒体上线日历的界面截图">
+          <div><b>11月窗口表更新：三部秋档片提前上线</b><span>原定 12 月入库的片子中，两部改为 11 月下旬，一部顺延。</span></div>
+        </a>
+        <a class="news-item" href="/#deep">
+          <img src="https://picsum.photos/seed/news-restore/160/120" width="160" height="120" loading="lazy" alt="老电影胶片扫描的工作台">
+          <div><b>修复团队公开《杀人回忆》4K 扫描原始分辨率</b><span>扫描源为 35mm 底片，2.39:1 画幅，色深 12bit。</span></div>
+        </a>
+        <a class="news-item" href="/#faq">
+          <img src="https://picsum.photos/seed/news-subtitle/160/120" width="160" height="120" loading="lazy" alt="字幕校对时间轴软件界面">
+          <div><b>1957 年《十二怒汉》精校中字发布校对日志</b><span>日志含三遍校对记录与 41 条术语对照。</span></div>
+        </a>
+        <a class="news-item" href="/#rank">
+          <img src="https://picsum.photos/seed/news-festival/160/120" width="160" height="120" loading="lazy" alt="影展放映厅观众席">
+          <div><b>冬季影展片单公布，四部修复片进竞赛单元</b><span>其中两部为本月新入库，放映带导演映后谈。</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 口碑榜 + 时间线 -->
+  <section class="sec" id="rank">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>口碑榜与本周时间线</h2>
+          <div class="sec-sub">榜单按条目内评分与有效短评数加权，时间线按上线顺序。</div>
+        </div>
+      </div>
+      <div class="rank-timeline">
+        <div>
+          <ol class="rank">
+            <li><a class="n" href="/#deep">十二怒汉 1957 · CC 版</a><span class="s">8.9 / 2,134 评</span></li>
+            <li><a class="n" href="/#picks">杀人回忆 · 4K 修复版</a><span class="s">8.7 / 1,882 评</span></li>
+            <li><a class="n" href="/#guide">牯岭街少年杀人事件</a><span class="s">8.6 / 1,347 评</span></li>
+            <li><a class="n" href="/#rank">燃烧 · 导评版</a><span class="s">8.2 / 1,206 评</span></li>
+            <li><a class="n" href="/#updates">雪国列车 · 导演剪辑版</a><span class="s">8.1 / 976 评</span></li>
+            <li><a class="n" href="/#picks">南方车站的聚会 · HDR</a><span class="s">7.8 / 1,540 评</span></li>
+          </ol>
+        </div>
+        <div>
+          <ul class="timeline">
+            <li><time>11-01</time><b>《一一》字幕重排上线</b>，修复了时间轴在 2 小时 40 分后的漂移。</li>
+            <li><time>11-02</time><b>《杀人回忆》4K 版画幅校正</b>，2.39:1 替换旧 2.35:1 版本。</li>
+            <li><time>11-05</time><b>《牯岭街少年杀人事件》修复段替换</b>，替换第 3 段有划痕的素材。</li>
+            <li><time>11-06</time><b>《雪国列车》导演剪辑版与《南方车站的聚会》HDR</b> 同日入库。</li>
+            <li><time>11-07</time><b>《十二怒汉》1957 版精校中字</b>完成第三遍校对并发布日志。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 相关推荐 -->
+  <section class="sec" id="rec">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>相关推荐：按你最近看的条目匹配</h2>
+          <div class="sec-sub">标签对应片库里的分类与版本通道。</div>
+        </div>
+      </div>
+      <div class="rec">
+        <a href="/#deep">华语犯罪片暗部修复</a>
+        <a href="/#picks">导演剪辑版科幻</a>
+        <a href="/#faq">法庭片精校中字</a>
+        <a href="/#rank">黑色电影 1940s</a>
+        <a href="/#updates">奉俊昊作品版本对照</a>
+        <a href="/#guide">李沧东导评音轨</a>
+        <a href="/#overview">CC 标准收藏中字</a>
+        <a href="/#news">影展获奖修复片</a>
+        <a href="/#comments">观众争议版本</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="brandline">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#111a2b"/>
+            <circle cx="32" cy="32" r="16" fill="none" stroke="#f2b134" stroke-width="4"/>
+            <circle cx="32" cy="32" r="4" fill="#f2b134"/>
+          </svg>
+          <b>免费电影中心八度影院</b>
+        </div>
+        <p class="pos">把一部片的版本、字幕和画质码率讲清楚，比堆更多片源更省时间。</p>
+      </div>
+      <div>
+        <h5>片单</h5>
+        <ul>
+          <li><a href="/#picks">本周精选</a></li>
+          <li><a href="/#updates">最新更新</a></li>
+          <li><a href="/#rank">口碑榜</a></li>
+          <li><a href="/#rec">相关推荐</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>观影</h5>
+        <ul>
+          <li><a href="/#overview">领域概览</a></li>
+          <li><a href="/#guide">体验指南</a></li>
+          <li><a href="/#faq">常见问题</a></li>
+          <li><a href="/#comments">观众评论</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>关于</h5>
+        <ul>
+          <li><a href="/#deep">深度解析</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#cats">分类入口</a></li>
+        </ul>
+      </div>
+    </div>
+    <p style="color:#6b7891;font-size:12px;max-width:60em">示例数据说明：片库数量、评分、评论数与上线日期均为演示用虚构数据，片名、导演与版本差异为公开影片信息，具体放映渠道以对应发行方公告为准。页脚更新时间为 2026-11-08，对应正文《十二怒汉》中字、《杀人回忆》4K、《雪国列车》导演剪辑版三条更新项。</p>
+    <div class="bottom">
+      <span>© 2026 免费电影中心八度影院 · 内容索引与文摘</span>
+      <span>更新时间 2026-11-08</span>
+    </div>
+  </div>
+</footer>
+
+<button id="totop" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  var btn=document.getElementById('menubtn');
+  var nav=document.getElementById('mainnav');
+  btn.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+    btn.setAttribute('aria-label',open?'收起导航菜单':'展开导航菜单');
+  });
+  nav.addEventListener('click',function(e){
+    if(e.target.tagName==='A' && window.innerWidth<=960){
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    }
+  });
+
+  var form=document.getElementById('searchform');
+  var q=document.getElementById('q');
+  var fb=document.getElementById('fb');
+  var index=[].map.call(document.querySelectorAll('h2,h3,summary,.update-item .t,.rank .n,.rec a,.tags a'),function(el){
+    return {text:(el.textContent||'').trim(),el:el};
+  });
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var kw=q.value.trim().toLowerCase();
+    if(!kw){fb.textContent='请输入片名、导演或年份关键词。';return;}
+    var hit=null;
+    for(var i=0;i<index.length;i++){
+      if(index[i].text.toLowerCase().indexOf(kw)>-1){hit=index[i];break;}
+    }
+    if(hit){
+      fb.textContent='找到：'+hit.text;
+      var target=hit.el.closest('section,details,article')||hit.el;
+      target.scrollIntoView({behavior:'smooth',block:'start'});
+    }else{
+      fb.textContent='没有匹配“'+q.value.trim()+'”的条目，换片名全称、导演姓氏或年份试试。';
+    }
+  });
+
+  var totop=document.getElementById('totop');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>520){totop.classList.add('show');}else{totop.classList.remove('show');}
+  },{passive:true});
+  totop.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  var links=[].slice.call(document.querySelectorAll('#sidenav a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href').replace('/#','#'));}).filter(Boolean);
+  if('IntersectionObserver' in window && secs.length){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          links.forEach(function(l){l.classList.remove('active');});
+          var id='#'+en.target.id;
+          var active=links.filter(function(l){return l.getAttribute('href').replace('/#','')===id;})[0];
+          if(active){active.classList.add('active');}
+        }
+      });
+    },{rootMargin:'-120px 0px -60% 0px',threshold:0});
+    secs.forEach(function(s){io.observe(s);});
+  }
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"免费电影中心八度影院",
+  "inLanguage":"zh-CN",
+  "description":"按导演、版本、字幕与码率整理的电影片单与观影指南。",
+  "potentialAction":{
+    "@type":"SearchAction",
+    "target":"/#updates?q={search_term_string}",
+    "query-input":"required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"《雪国列车》导演剪辑版和影院版差在哪","acceptedAnswer":{"@type":"Answer","text":"导演剪辑版 126 分钟，影院版 113 分钟。多出的 13 分钟集中在尾部车厢日常和结尾雪原步行段落，补足了车厢等级差的生活细节。"}},
+    {"@type":"Question","name":"4K 修复版一定比 1080p 好看吗","acceptedAnswer":{"@type":"Answer","text":"不一定。修复的主要收益在暗部细节和画幅校正，例如《杀人回忆》4K 版能看见下水道水面的反光。但部分修复会压掉高光溢出的风格，是否更好看取决于影片原本的摄影意图。"}},
+    {"@type":"Question","name":"《十二怒汉》1957 版与 1997 版怎么选","acceptedAnswer":{"@type":"Answer","text":"1957 版黑白、96 分钟，镜头调度克制。1997 版彩色翻拍，人物表演放大、台词更外放。两版都在库，1957 版于 11月7日上线精校中字。"}},
+    {"@type":"Question","name":"导演解说音轨在哪里打开","acceptedAnswer":{"@type":"Answer","text":"在条目页的语言轨道一栏选择第二轨。默认播放原声轨，导评轨需手动切换。目前在库 412 部带导评，其中带中文字幕的 178 部。"}},
+    {"@type":"Question","name":"为什么两版 1080p 看起来清晰度不同","acceptedAnswer":{"@type":"Answer","text":"差别在码率。同为 1080p，4.5 Mbps 与 8 Mbps 在暗场和快速横摇镜头里差别明显，前者容易出现色带。选片时看码率标注比看分辨率有用。"}}
+  ]
+}
+</script>
+</body>
+          </html>
